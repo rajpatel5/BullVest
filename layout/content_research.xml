@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:scrollbars="none"
+    tools:context="com.target.android.bullvest.research.ResearchActivity"
+    tools:showIn="@layout/app_bar_research"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <!-- Stock Symbol-->
+        <TextView
+            android:id="@+id/research_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_bar"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/amethysta"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="AAPL" />
+
+        <!-- Stock Exchange -->
+        <TextView
+            android:id="@+id/research_exchange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/search_bar"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/antic_slab"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            tools:text="NYSE" />
+
+        <LinearLayout
+            android:id="@+id/company_name_and_sector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="6dp"
+            android:layout_below="@id/research_symbol">
+            <!-- Company Name-->
+            <TextView
+                android:id="@+id/research_company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLength="30"
+                tools:text="Apple Inc"
+                android:textSize="12sp" />
+
+            <!-- Sector -->
+            <TextView
+                android:id="@+id/research_sector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:maxLength="30"
+                tools:text="Technology"
+                android:gravity="end"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Underline -->
+        <View
+            android:id="@+id/summary_underline"
+            android:layout_below="@id/company_name_and_sector"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorAccent"/>
+
+        <!-- Stock Price -->
+        <TextView
+            android:id="@+id/research_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/summary_underline"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/amethysta"
+            android:textSize="30sp"
+            tools:text="$163.23"
+            tools:textColor="@color/priceGreen" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/iex_citation"
+            android:layout_above="@id/priceChange_percentChange"
+            android:layout_toEndOf="@id/research_price"
+            android:layout_marginBottom="6dp"
+            android:layout_marginStart="4dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="10sp" />
+
+        <!-- Price Change and Percent Change -->
+        <LinearLayout
+            android:id="@+id/priceChange_percentChange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/research_price"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/research_price_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/amethysta"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/research_price"
+                app:layout_constraintTop_toBottomOf="@+id/research_price"
+                tools:text="2.34"
+                tools:textColor="@color/priceGreen" />
+
+            <TextView
+                android:id="@+id/research_percent_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/amethysta"
+                android:shadowColor="@color/textShadowColor"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@+id/research_price_change"
+                app:layout_constraintTop_toBottomOf="@+id/research_price"
+                tools:text="(0.17%)"
+                tools:textColor="@color/priceGreen" />
+
+            <TextView
+                android:id="@+id/research_market_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/montaga"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@+id/research_price_change"
+                app:layout_constraintTop_toBottomOf="@+id/research_price"
+                tools:text="Regular" />
+        </LinearLayout>
+
+        <!-- Graphs -->
+        <RelativeLayout
+            android:id="@+id/research_charts"
+            android:layout_below="@id/priceChange_percentChange"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/graph_outline">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/graph_tabs"
+                style="@style/CategoryTab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/transparent"
+                app:tabIndicatorColor="@color/colorPrimaryDark"
+                app:tabTextColor="@color/colorPrimary"
+                app:tabSelectedTextColor="@color/colorPrimaryDark"
+                app:tabGravity="fill"
+                app:tabMode="fixed"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/research_viewpager"
+                android:layout_above="@id/graph_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+
+        <!-- Buy and Sell trade buttons -->
+        <LinearLayout
+            android:id="@+id/trade_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/research_charts"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/sell"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/research_trade_buttons"
+                android:fontFamily="@font/taviraj_bold"
+                android:text="@string/sell_button"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/research_trade_buttons"
+                android:fontFamily="@font/taviraj_bold"
+                android:text="@string/buy_button"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- add to watchlist button -->
+        <Button
+            android:id="@+id/add_watchlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trade_buttons"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/watchlist_button"
+            android:fontFamily="@font/taviraj_bold"
+            android:text="@string/add_to_watchlist"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/after_watchlist_divider"
+            android:layout_below="@id/add_watchlist"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/colorAccent"/>
+
+        <!-- Portfolio Position Info -->
+        <LinearLayout
+            android:id="@+id/portfolio_position_info"
+            android:layout_below="@id/after_watchlist_divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/transparent"
+            android:visibility="visible"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/position_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/amethysta"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    tools:text="268" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/postTradeTextColor2"
+                    android:text="@string/your_position"/>
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/colorPrimaryDark"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/equity_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/amethysta"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    tools:text="$43745.64" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/postTradeTextColor2"
+                    android:text="@string/equity_value"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/after_position_info_divider"
+            android:layout_below="@id/portfolio_position_info"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/colorAccent"/>
+
+        <!-- Stats Title -->
+        <TextView
+            android:id="@+id/stats_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/after_position_info_divider"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/bigshot_one"
+            android:text="@string/stats_title"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <!-- Underline -->
+        <View
+            android:id="@+id/stats_underline"
+            android:layout_below="@id/stats_title"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorAccent"/>
+
+        <!-- Contains all analysis data -->
+        <GridLayout
+            android:id="@+id/analysis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/stats_underline"
+            android:columnCount="2"
+            android:rowCount="8"
+            android:padding="6dp"
+            android:background="@drawable/layout_layers"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp">
+
+            <!-- First column of data Names -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_gravity="fill_horizontal"
+                android:text="@string/open"
+                android:layout_marginStart="6dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:layout_gravity="fill_horizontal"
+                android:text="@string/previous_close"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="2"
+                android:layout_gravity="fill_horizontal"
+                android:text="@string/high"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="3"
+                android:layout_gravity="fill_horizontal"
+                android:text="@string/low"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/market_cap"
+                android:layout_column="0"
+                android:layout_row="4"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/p_e_ratio"
+                android:layout_column="0"
+                android:layout_row="5"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="6"
+                android:layout_gravity="fill_horizontal"
+                android:text="@string/_52_week_high"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="7"
+                android:layout_gravity="fill_horizontal"
+                android:text="@string/_52_week_low"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <!-- Second column of data values -->
+            <TextView
+                android:id="@+id/open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="0"
+                tools:text="193.32"
+                android:layout_marginEnd="6dp"
+                android:layout_gravity="end"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/previous_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1"
+                tools:text="192.85"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="end"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="2"
+                tools:text="194.13"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="end"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="3"
+                tools:text="193.12"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="end"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/market_cap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="4"
+                tools:text="756.32B"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="end"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/pe_ratio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="5"
+                tools:text="15.64"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="end"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/week_52_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="6"
+                tools:text="123.45"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="end"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/week_52_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="7"
+                tools:text="123.53"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="end"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+        </GridLayout>
+
+        <!-- Recent News Title -->
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/analysis"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/bigshot_one"
+            android:text="@string/news_title"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <!-- Underline -->
+        <View
+            android:id="@+id/news_underline"
+            android:layout_below="@id/news_title"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorAccent"/>
+
+        <!-- Layout for a list of articles -->
+        <RelativeLayout
+            android:id="@+id/news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/news_underline"
+            android:background="@color/white">
+
+            <ListView
+                android:id="@+id/list"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:nestedScrollingEnabled="true"
+                android:scrollbars="none"
+                android:divider="@android:color/transparent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:headerDividersEnabled="true"
+                android:footerDividersEnabled="true"
+                android:dividerHeight="8sp" />
+
+            <!-- Empty view is only visible when the list has no items. -->
+            <TextView
+                android:id="@+id/empty_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAppearance="?android:textAppearanceMedium"/>
+
+            <!-- Loading indicator is only shown before the first load -->
+            <ProgressBar
+                android:id="@+id/loading_indicator"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

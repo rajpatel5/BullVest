@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:scrollbars="none"
+    tools:context="com.target.android.bullvest.trade.TradeActivity"
+    tools:showIn="@layout/app_bar_trade">
+
+    <!-- Pre-trade layout-->
+    <ScrollView
+        android:id="@+id/trading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/available_cash"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/available_cash"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:fontFamily="@font/amethysta"
+                    android:paddingBottom="4dp"
+                    android:paddingTop="4dp"
+                    android:text="@string/available_cash"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:fontFamily="@font/amethysta"
+                    android:paddingBottom="4dp"
+                    android:paddingTop="4dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    tools:text="$250000.00" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/trade_info"
+                android:layout_below="@id/available_cash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="6dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/amethysta"
+                        android:text="@string/symbol"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/symbol_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/amethysta"
+                        android:gravity="end"
+                        android:hint="@string/symbol"
+                        android:inputType="textCapCharacters"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="0dp"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/tertiary_text_dark"
+                        android:textSize="22sp"
+                        tools:text="AAPL" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/amethysta"
+                        android:text="@string/amount"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/shares_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/amethysta"
+                        android:gravity="end"
+                        android:hint="@string/shares"
+                        android:inputType="number"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="0dp"
+                        android:textColor="@android:color/tertiary_text_dark"
+                        android:textSize="22sp"
+                        tools:text="50" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="100"
+                        android:fontFamily="@font/cardo_bold"
+                        android:text="@string/current_price"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/current_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/amethysta"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        tools:text="$123.45" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="100"
+                        android:fontFamily="@font/cardo_bold"
+                        android:text="@string/commissions"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/commissions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/amethysta"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        tools:text="$10.00" />
+                </LinearLayout>
+
+                <!-- Underline -->
+                <View
+                    android:id="@+id/trade_underline"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorAccent"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="100"
+                        android:fontFamily="@font/cantata_one"
+                        android:text="@string/est_cost"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/estimate_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/amethysta"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp"
+                        tools:text="$6172.5" />
+                </LinearLayout>
+
+                <!-- Buy and Sell trade buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="14dp">
+
+                    <Button
+                        android:id="@+id/sell_trade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/trade_buttons"
+                        android:fontFamily="@font/taviraj_bold"
+                        android:gravity="center"
+                        android:text="@string/sell_button"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/buy_trade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/trade_buttons"
+                        android:fontFamily="@font/taviraj_bold"
+                        android:gravity="center"
+                        android:text="@string/buy_button"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/trade_types_1"
+                android:layout_below="@id/trade_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/market"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/market"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="0dp"/>
+
+                <CheckBox
+                    android:id="@+id/limit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/limit"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="0dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/trade_types_2"
+                android:layout_below="@id/trade_types_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/stop_loss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stop_loss"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="0dp"/>
+
+                <CheckBox
+                    android:id="@+id/stop_limit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stop_limit"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:textSize="12sp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="0dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/stop_order"
+                android:layout_below="@id/trade_types_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amethysta"
+                    android:text="@string/stop"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/stop_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amethysta"
+                    android:gravity="end"
+                    android:hint="@string/stop_price"
+                    android:inputType="numberDecimal"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/tertiary_text_dark"
+                    android:textSize="18sp"
+                    tools:text="123.70" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/limit_order"
+                android:layout_below="@id/stop_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amethysta"
+                    android:text="@string/limit"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/limit_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/cardo"
+                    android:gravity="end"
+                    android:hint="@string/limit_price"
+                    android:inputType="numberDecimal"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/tertiary_text_dark"
+                    android:textSize="18sp"
+                    tools:text="124.23" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/good_till"
+                android:layout_below="@id/limit_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/for_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/good_for_the_day"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="0dp"/>
+
+                <CheckBox
+                    android:id="@+id/cancelled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/good_till_cancelled"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"/>
+            </LinearLayout>
+
+            <!-- Empty View -->
+            <View
+                android:layout_below="@id/good_till"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:visibility="invisible"
+                android:background="@color/white"/>
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/executed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@drawable/background_gradient">
+
+        <TextView
+            android:id="@+id/trade_statement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/position_info"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/adamina"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            tools:text="RBC Purchased" />
+
+        <!-- Post-trade layout-->
+        <RelativeLayout
+            android:id="@+id/position_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/position_box_info_outline"
+            android:layout_centerVertical="true">
+
+            <!-- General Trade Info -->
+            <LinearLayout
+                android:id="@+id/general_trade_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/share_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="14dp"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/amethysta"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp"
+                        tools:text="268" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/postTradeTextColor"
+                        android:text="@string/shares"/>
+
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@color/dividerColor"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/execution_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="14dp"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/amethysta"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp"
+                        tools:text="$18.43" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/postTradeTextColor"
+                        android:text="@string/execution_price"/>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@color/dividerColor"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="14dp"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/amethysta"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp"
+                        tools:text="$4939.24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/postTradeTextColor"
+                        android:text="@string/total"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- In Depth Trade Info -->
+            <LinearLayout
+                android:id="@+id/in_depth_trade_info"
+                android:layout_below="@id/general_trade_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@color/dividerColor"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/postTradeTextColor"
+                        android:text="@string/order_type"/>
+
+                    <TextView
+                        android:id="@+id/order_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:textColor="@color/postTradeTextColor2"
+                        tools:text="Stop Limit"/>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:id="@+id/stop_price_layout_divider"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="4dp"
+                    android:background="@color/dividerColor"/>
+
+                <LinearLayout
+                    android:id="@+id/stop_price_layout"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/postTradeTextColor"
+                        android:text="@string/stop_price"/>
+
+                    <TextView
+                        android:id="@+id/post_stop_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:textColor="@color/postTradeTextColor2"
+                        tools:text="$18.72"/>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:id="@+id/limit_price_layout_divider"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="4dp"
+                    android:background="@color/dividerColor"/>
+
+                <LinearLayout
+                    android:id="@+id/limit_price_layout"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/postTradeTextColor"
+                        android:text="@string/limit_price"/>
+
+                    <TextView
+                        android:id="@+id/post_limit_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:textColor="@color/postTradeTextColor2"
+                        tools:text="$18.22"/>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="4dp"
+                    android:background="@color/dividerColor"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/postTradeTextColor"
+                        android:text="@string/commissions"/>
+
+                    <TextView
+                        android:id="@+id/post_commissions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:textColor="@color/postTradeTextColor2"
+                        tools:text="$25.00"/>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:id="@+id/time_frame_Layout_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_margin="4dp"
+                    android:background="@color/dividerColor"/>
+
+                <LinearLayout
+                    android:id="@+id/time_frame_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/postTradeTextColor"
+                        android:text="@string/time_frame"/>
+
+                    <TextView
+                        android:id="@+id/time_frame"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:textColor="@color/postTradeTextColor2"
+                        tools:text="Good Till Cancelled"/>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="4dp"
+                    android:background="@color/dividerColor"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/postTradeTextColor"
+                        android:text="@string/order_status"/>
+
+                    <TextView
+                        android:id="@+id/order_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:textColor="@color/postTradeTextColor2"
+                        tools:text="Filled"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

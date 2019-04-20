@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@color/white"
+    tools:context="com.target.android.bullvest.portfolio.PortfolioActivity"
+    tools:showIn="@layout/app_bar_portfolio">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/portfolio_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/amethysta"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp"
+            android:textStyle="normal"
+            tools:text="$50234.65" />
+
+        <LinearLayout
+            android:id="@+id/portfolio_balance_change"
+            android:layout_below="@id/portfolio_balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/balance_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amethysta"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                tools:text="234.65" />
+
+            <TextView
+                android:id="@+id/balance_percent_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amethysta"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                tools:text=" (0.47%)" />
+        </LinearLayout>
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/portfolio_pie_chart"
+            android:layout_width="270dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="-125dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/portfolio_chart"/>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/portfolio_chart"
+            android:layout_below="@id/portfolio_balance_change"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/graph_outline"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"/>
+
+        <!-- Position Title -->
+        <TextView
+            android:id="@+id/positions_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/portfolio_pie_chart"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/bigshot_one"
+            android:text="@string/positions_title"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <!-- Underline -->
+        <View
+            android:id="@+id/positions_underline"
+            android:layout_below="@id/positions_title"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorAccent"/>
+
+        <!-- Layout for a list of articles -->
+        <RelativeLayout
+            android:id="@+id/positions_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/positions_underline"
+            android:background="@color/white">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/positions"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="10sp" />
+
+            <!-- Empty view is only visible when the list has no items. -->
+            <TextView
+                android:id="@+id/empty_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="NO INVESTMENTS"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textAppearance="?android:textAppearanceMedium"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

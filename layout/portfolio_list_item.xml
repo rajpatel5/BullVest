@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingStart="12dp"
+    android:paddingEnd="16dp"
+    android:layout_marginBottom="6dp"
+    android:layout_marginStart="6dp"
+    android:layout_marginEnd="4dp"
+    android:baselineAligned="false"
+    android:background="@drawable/list_item_outline">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:background="@color/transparent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="6"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/portfolio_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:fontFamily="@font/adamina"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            tools:text="AAPL" />
+
+        <TextView
+            android:id="@+id/portfolio_shares"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:ellipsize="end"
+            android:fontFamily="@font/alike_angular"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            tools:text="23 shares" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:background="@color/transparent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
+        android:layout_weight="4"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/portfolio_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@color/transparent"
+            android:fontFamily="@font/cantata_one"
+            android:maxLines="1"
+            android:textSize="16sp"
+            tools:text="$172.44"
+            tools:textColor="@color/priceGreen" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@color/transparent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/portfolio_price_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/montaga"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="12sp"
+                tools:text="1.70 "
+                tools:textColor="@color/percentChangeGreen" />
+
+            <TextView
+                android:id="@+id/portfolio_percent_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@color/transparent"
+                android:fontFamily="@font/montaga"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="12sp"
+                tools:text=" (0.47%)"
+                tools:textColor="@color/percentChangeGreen" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

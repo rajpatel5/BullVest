@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.target.android.bullvest.account.AccountActivity"
+    tools:showIn="@layout/app_bar_account">
+
+    <LinearLayout
+        android:id="@+id/balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/account_balance"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/cash_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="50000"
+            android:inputType="number"
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingStart="0dp"
+            android:paddingEnd="16dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <SeekBar
+        android:id="@+id/cash_bar"
+        android:layout_below="@id/balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_margin="2dp"
+        android:max="250000"
+        android:progress="50000"/>
+
+    <LinearLayout
+        android:id="@+id/commissions"
+        android:layout_below="@id/cash_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/account_commissions"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/commissions_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="10"
+            android:inputType="number"
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingStart="0dp"
+            android:paddingEnd="16dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/commissions_bar"
+        android:layout_below="@id/commissions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_margin="2dp"
+        android:max="25"
+        android:progress="10"/>
+
+    <LinearLayout
+        android:id="@+id/account_buttons"
+        android:layout_below="@id/commissions_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="top"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/research_trade_buttons" />
+
+        <Button
+            android:id="@+id/save_changes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_changes"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimary"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:elevation="0dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/white" />
+    </LinearLayout>
+</RelativeLayout>
