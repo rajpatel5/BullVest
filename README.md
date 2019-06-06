@@ -10,4 +10,7 @@ It is coded in Java using Android Studio. This project makes excellent use of th
   <img src="https://user-images.githubusercontent.com/43008021/58757669-34813580-84de-11e9-991b-e72b58aa1f7b.jpg" width="150" hspace="20"/>
   <img src="https://user-images.githubusercontent.com/43008021/58757676-3f3bca80-84de-11e9-927e-2beec8665774.jpg" width="150" hspace="20"/>
   <img src="https://user-images.githubusercontent.com/43008021/58757689-7d38ee80-84de-11e9-99db-d35eeb7bda1b.jpg" width="150" hspace="20"/>
+  <img src="https://user-images.githubusercontent.com/43008021/59005923-74e9f780-87ed-11e9-8ec4-3b439cf0e159.jpg" width="150" hspace="20"/>
+  <img src="https://user-images.githubusercontent.com/43008021/59005955-964ae380-87ed-11e9-98a1-ae5c54c50798.jpg" width="150" hspace="20"/>
+  <img src="https://user-images.githubusercontent.com/43008021/59005984-b8dcfc80-87ed-11e9-9a9d-786d3c6f6d86.jpg" width="150" hspace="20"/>
 </p>
