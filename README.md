@@ -11,6 +11,6 @@ It is coded in Java using Android Studio. This project makes excellent use of th
   <img src="https://user-images.githubusercontent.com/43008021/59006631-f7c08180-87f0-11e9-833e-dd045edeb9b7.jpg" width="150" hspace="20"/>
   <img src="https://user-images.githubusercontent.com/43008021/58757689-7d38ee80-84de-11e9-99db-d35eeb7bda1b.jpg" width="150" hspace="20"/>
   <img src="https://user-images.githubusercontent.com/43008021/59005923-74e9f780-87ed-11e9-8ec4-3b439cf0e159.jpg" width="150" hspace="20"/>
-  <img src="https://user-images.githubusercontent.com/43008021/59005955-964ae380-87ed-11e9-98a1-ae5c54c50798.jpg" width="150" hspace="20"/>
+  <img src="https://user-images.githubusercontent.com/43008021/59006675-36eed280-87f1-11e9-8e89-95ded8701817.jpg" width="150" hspace="20"/>
   <img src="https://user-images.githubusercontent.com/43008021/59005984-b8dcfc80-87ed-11e9-9a9d-786d3c6f6d86.jpg" width="150" hspace="20"/>
 </p>
