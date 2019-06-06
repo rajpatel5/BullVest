@@ -7,7 +7,7 @@ It is coded in Java using Android Studio. This project makes excellent use of th
 <p float="left">
   <img src="https://user-images.githubusercontent.com/43008021/58757633-a5741d80-84dd-11e9-94aa-831df546ae0b.jpg" width="150" hspace="20"/>
   <img src="https://user-images.githubusercontent.com/43008021/58757664-24695600-84de-11e9-8e5c-ed76d6c35d96.jpg" width="150" hspace="20"/>
-  <img src="https://user-images.githubusercontent.com/43008021/59006454-0eb2a400-87f0-11e9-923e-e3c114bc6c1f.jpg" witdh="15" hspace="20"/>
+  <img src="https://user-images.githubusercontent.com/43008021/59006572-b7f99a00-87f0-11e9-9bc1-a88381466fb7.jpg" width="150" hspace="20"/>
   <img src="https://user-images.githubusercontent.com/43008021/58757676-3f3bca80-84de-11e9-927e-2beec8665774.jpg" width="150" hspace="20"/>
   <img src="https://user-images.githubusercontent.com/43008021/58757689-7d38ee80-84de-11e9-99db-d35eeb7bda1b.jpg" width="150" hspace="20"/>
   <img src="https://user-images.githubusercontent.com/43008021/59005923-74e9f780-87ed-11e9-8ec4-3b439cf0e159.jpg" width="150" hspace="20"/>
