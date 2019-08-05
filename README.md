@@ -4,7 +4,7 @@ A stock market simulator app which offers videos to learn the basics of trading 
 
 It is coded in Java using Android Studio. This project makes excellent use of threads, databases, API's, and much more. It also makes use of the fundamentals of the Android operating system such as services, intents, and notifications. It has a simple, yet effective UI created through the use of fragments, listviews and much more. The real-time data requires JSON parsing which the app successfully completes and it loads the data using cursorloaders. The user portfolio data is stored in a database for later use which requires SQLite.
 
-<p float="left">
+<p align="center" float="left">
   <img src="https://user-images.githubusercontent.com/43008021/58757633-a5741d80-84dd-11e9-94aa-831df546ae0b.jpg" width="150" hspace="20"/>
   <img src="https://user-images.githubusercontent.com/43008021/58757664-24695600-84de-11e9-8e5c-ed76d6c35d96.jpg" width="150" hspace="20"/>
   <img src="https://user-images.githubusercontent.com/43008021/59006572-b7f99a00-87f0-11e9-9bc1-a88381466fb7.jpg" width="150" hspace="20"/>
